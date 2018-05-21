@@ -15,16 +15,20 @@ describe('The Greet function', function(){
   it('should keep a unique user greet count', function(){
     var greetInLanguage = MyGreetingsLogic();
       greetInLanguage.greeting("Isixhosa", 'Andre')
-      greetInLanguage.counting("Isixhosa", 'Andre')
-      greetInLanguage.counting("Isixhosa", 'Andre')
+      greetInLanguage.greeting("Isixhosa", 'Andre')
+      greetInLanguage.greeting("Isixhosa", 'Andre')
       assert.equal(1, greetInLanguage.updateCounter())
   })
   it('should keep a count of all the users greeted', function(){
 
     var greetInLanguage = MyGreetingsLogic()
-    greetInLanguage.greeting("Isixhosa", 'James')
-    greetInLanguage.counting("Isixhosa", 'Mzwa')
-    greetInLanguage.counting("Isixhosa", 'Andre')
-    assert.equal(1, greetInLanguage.updateCounter())
+    greetInLanguage.greeting('Isixhosa', 'James')
+    greetInLanguage.greeting('Isixhosa', 'Mzwa')
+    greetInLanguage.greeting("Isixhosa", 'Andre')
+    greetInLanguage.greeting("Isixhosa", 'Andre')
+    greetInLanguage.greeting("Isixhosa", 'Andre')
+    greetInLanguage.greeting("Isixhosa", 'Andre')
+
+    assert.equal(3, greetInLanguage.updateCounter())
   })
 })

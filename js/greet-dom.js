@@ -10,10 +10,9 @@ var clearBtnElem = document.querySelector('.clear')
 
 function greetingsWorking(){
 var everyName = textInputElem.value;
-greetingInstance.counting(everyName);
+// greetingInstance.counting(everyName);
 
 //update the DOM to display the counter
-counterElem.innerHTML = greetingInstance.updateCounter();
 
 
 var checkedRadioBtn = document.querySelector("input[name='languageRadio']:checked");
@@ -21,6 +20,8 @@ if (checkedRadioBtn){
 var languageType = checkedRadioBtn.value;
    // languageType will know which language is it.
      greetingInstance.greeting(languageType, everyName);
+     counterElem.innerHTML = greetingInstance.counterTotal();
+
 }
 
 if(everyName !== ""){

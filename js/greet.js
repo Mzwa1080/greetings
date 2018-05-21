@@ -2,7 +2,7 @@ function MyGreetingsLogic(){
   // variables
   var greetedNames = {};
   var counter = 0;
-  var Names ='';
+  // var Names ='';
   var languages = "";
 
        function counting(everyName){
@@ -10,7 +10,7 @@ function MyGreetingsLogic(){
         //when the greet button is pressed check if this user was already greeted before
         //by looking if the userName exists in greetedNames if not increment this counter and update the screen
         if (greetedNames[everyName] === undefined){
-          Names = everyName;
+          // Names = everyName;
           //console.log(Names);
         //add an entry for the user that was greeted in the Object Map
          greetedNames[everyName] = 0;
@@ -19,7 +19,7 @@ function MyGreetingsLogic(){
         }
       }
 
-      function updateCounter(){
+      function counterTotal(){
         return Object.keys(greetedNames).length
       }
 
@@ -30,6 +30,7 @@ function MyGreetingsLogic(){
 
         function greeting(language, Names){
           console.log(Names);
+          counting(Names);
           if (language === "English"){
               // counting(name);
              return languages = 'Good day, ' + Names;
@@ -55,9 +56,9 @@ function MyGreetingsLogic(){
         }
 
         return{
-        counting,
+        //counting,
         greeting,
-        updateCounter,
+        counterTotal,
         langGreetings,
         clear
 
