@@ -29,7 +29,7 @@ function MyGreetingsLogic(){
 
 
         function greeting(language, Names){
-          console.log(Names);
+          //console.log(Names);
           counting(Names);
           if (language === "English"){
               // counting(name);

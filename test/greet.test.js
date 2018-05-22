@@ -17,18 +17,18 @@ describe('The Greet function', function(){
       greetInLanguage.greeting("Isixhosa", 'Andre')
       greetInLanguage.greeting("Isixhosa", 'Andre')
       greetInLanguage.greeting("Isixhosa", 'Andre')
-      assert.equal(1, greetInLanguage.updateCounter())
+      assert.equal(1, greetInLanguage.counterTotal())
   })
   it('should keep a count of all the users greeted', function(){
 
     var greetInLanguage = MyGreetingsLogic()
     greetInLanguage.greeting('Isixhosa', 'James')
-    greetInLanguage.greeting('Isixhosa', 'Mzwa')
-    greetInLanguage.greeting("Isixhosa", 'Andre')
+    greetInLanguage.greeting('Afrikaans', 'Mzwa')
+    greetInLanguage.greeting("English", 'Andre')
     greetInLanguage.greeting("Isixhosa", 'Andre')
     greetInLanguage.greeting("Isixhosa", 'Andre')
     greetInLanguage.greeting("Isixhosa", 'Andre')
 
-    assert.equal(3, greetInLanguage.updateCounter())
+    assert.equal(3, greetInLanguage.counterTotal())
   })
 })
