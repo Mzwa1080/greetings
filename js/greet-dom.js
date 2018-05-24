@@ -36,7 +36,7 @@ function greetingsWorking(){
 
 greetBtn.addEventListener('click', function(){
   greetingsWorking();
-    if(textInputElem.value = ""){
+    if(textInputElem.value != ""){
       textInputElem.value  = "";
   }
 
@@ -44,9 +44,9 @@ clearBtnElem.addEventListener('click', function(){
       greetingInstance.clearing();
       counterElem.innerHTML = 0;
       displayGreeting.innerHTML = "";
-      textInputElem.value;
-      //localStorage.clear();
-      //location.reload()
+      //textInputElem.value;
+      localStorage.clear();
+      location.reload()
 
     })
 });
