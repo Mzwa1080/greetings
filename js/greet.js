@@ -1,4 +1,4 @@
-function MyGreetingsLogic(){
+function MyGreetingsLogic(userStorages){
   // variables
   var greetedNames = {};
   var counter = 0;
@@ -16,9 +16,12 @@ function MyGreetingsLogic(){
         }
 
         if(userStorages){
-          greetedNames == userStorages;
+          greetedNames = userStorages;
         }
       }
+
+
+
 
       function counterTotal(){
         return Object.keys(greetedNames).length
@@ -65,7 +68,9 @@ function MyGreetingsLogic(){
         counterTotal,
         langGreetings,
         clear,
-        forLocal
+        forLocal,
+        //userzz
+
 
         }
 

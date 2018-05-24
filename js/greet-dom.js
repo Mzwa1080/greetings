@@ -34,15 +34,16 @@ function greetingsWorking(){
 
 greetBtn.addEventListener('click', function(){
   greetingsWorking();
-    if(textInputElem.value  = ""){
-      textInputElem.value = "";
+    if(textInputElem.value = ""){
+      textInputElem.value  = "";
   }
 
 clearBtnElem.addEventListener('click', function(){
-    greetingInstance.clear();
+      greetingInstance.clear();
       counterElem.innerHTML = 0;
       displayGreeting.innerHTML = "";
       localStorage.clear();
+      textInputElem.value
       //location.reload()
 
     })
