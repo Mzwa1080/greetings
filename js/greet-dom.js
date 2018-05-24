@@ -1,45 +1,49 @@
-var greetingInstance = MyGreetingsLogic(); //Instance
+var greetingInstance = MyGreetingsLogic(userStorages); //Instance
 // reference Dom elements
 var textInputElem = document.querySelector('.textInput');
 var counterElem = document.querySelector('.counter');
 var languageRadioELem = document.querySelector('.languageRadio');
 var displayGreeting = document.querySelector('.displayGreeting');
 var greetBtn = document.querySelector('.greetButton');
-var clearBtnElem = document.querySelector('.clear')
+var clearBtnElem = document.querySelector('.clear');
+var storing = localStorage.getItem('users');
 
+var userStorages = storing ? JSON.parse(storing) : {};
+counterElem.innerHTML = Object.keys(userStorages).length;
 
 function greetingsWorking(){
-var everyName = textInputElem.value;
+  var everyName = textInputElem.value.toUpperCase();
 // greetingInstance.counting(everyName);
 
-//update the DOM to display the counter
-
-
-var checkedRadioBtn = document.querySelector("input[name='languageRadio']:checked");
-if (checkedRadioBtn){
-var languageType = checkedRadioBtn.value;
+  var checkedRadioBtn = document.querySelector("input[name='languageRadio']:checked");
+    if (checkedRadioBtn){
+      var languageType = checkedRadioBtn.value;
    // languageType will know which language is it.
      greetingInstance.greeting(languageType, everyName);
      counterElem.innerHTML = greetingInstance.counterTotal();
 
-}
+   }
 
-if(everyName !== ""){
-  var languageGreeting = greetingInstance.langGreetings();
-  displayGreeting.innerHTML = languageGreeting +' ' + '!';
-}
+   if(everyName !== ""){
+     var languageGreeting = greetingInstance.langGreetings();
+      displayGreeting.innerHTML = languageGreeting +' ' + '!';
+    }
 
-}
+    localStorage.setItem("users", JSON.stringify(greetingInstance.forLocal()))
+  }
 
 greetBtn.addEventListener('click', function(){
   greetingsWorking();
-  if(textInputElem.value  = ""){
-    textInputElem.value = "";
+    if(textInputElem.value  = ""){
+      textInputElem.value = "";
   }
 
 clearBtnElem.addEventListener('click', function(){
     greetingInstance.clear();
-    counterElem.innerHTML = 0;
+      counterElem.innerHTML = 0;
+      displayGreeting.innerHTML = "";
+      localStorage.clear();
+      //location.reload()
 
-})
+    })
 });
