@@ -1,7 +1,7 @@
 function MyGreetingsLogic(userStorages){
   // variables
-  var greetedNames = {};
-  var counter = 0;
+  var greetedNames = userStorages || {};
+  //var counter = 0;
   // var Names ='';
   var languages = "";
 
@@ -9,7 +9,7 @@ function MyGreetingsLogic(userStorages){
         if(everyName !== ""){
           if (greetedNames[everyName] === undefined){
           // Names = everyName;
-          //console.log(Names);
+
          greetedNames[everyName] = 0;
          //counter++;
          }
@@ -18,15 +18,13 @@ function MyGreetingsLogic(userStorages){
         if(userStorages){
           greetedNames = userStorages;
         }
+
       }
 
-
-
-
-      function counterTotal(){
+   function counterTotal(){
         return Object.keys(greetedNames).length
       }
-      function forLocal(userStorages){
+      function forLocal(){
         return greetedNames;
       }
 
@@ -55,7 +53,7 @@ function MyGreetingsLogic(userStorages){
 
         }
 
-        function clear(){
+        function clearing(){
           greetedNames = {}
         }
         function forNames(){
@@ -67,7 +65,7 @@ function MyGreetingsLogic(userStorages){
         greeting,
         counterTotal,
         langGreetings,
-        clear,
+        clearing,
         forLocal,
         //userzz
 

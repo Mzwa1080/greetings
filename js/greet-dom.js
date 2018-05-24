@@ -1,4 +1,3 @@
-var greetingInstance = MyGreetingsLogic(userStorages); //Instance
 // reference Dom elements
 var textInputElem = document.querySelector('.textInput');
 var counterElem = document.querySelector('.counter');
@@ -6,10 +5,14 @@ var languageRadioELem = document.querySelector('.languageRadio');
 var displayGreeting = document.querySelector('.displayGreeting');
 var greetBtn = document.querySelector('.greetButton');
 var clearBtnElem = document.querySelector('.clear');
-var storing = localStorage.getItem('users');
 
+
+var storing = localStorage.getItem('users');
 var userStorages = storing ? JSON.parse(storing) : {};
+
 counterElem.innerHTML = Object.keys(userStorages).length;
+var greetingInstance = MyGreetingsLogic(userStorages) //Instance
+
 
 function greetingsWorking(){
   var everyName = textInputElem.value.toUpperCase();
@@ -18,13 +21,12 @@ function greetingsWorking(){
   var checkedRadioBtn = document.querySelector("input[name='languageRadio']:checked");
     if (checkedRadioBtn){
       var languageType = checkedRadioBtn.value;
+    }
    // languageType will know which language is it.
      greetingInstance.greeting(languageType, everyName);
      counterElem.innerHTML = greetingInstance.counterTotal();
 
-   }
-
-   if(everyName !== ""){
+  if(everyName !== ""){
      var languageGreeting = greetingInstance.langGreetings();
       displayGreeting.innerHTML = languageGreeting +' ' + '!';
     }
@@ -39,11 +41,11 @@ greetBtn.addEventListener('click', function(){
   }
 
 clearBtnElem.addEventListener('click', function(){
-      greetingInstance.clear();
+      greetingInstance.clearing();
       counterElem.innerHTML = 0;
       displayGreeting.innerHTML = "";
-      localStorage.clear();
-      textInputElem.value
+      textInputElem.value;
+      //localStorage.clear();
       //location.reload()
 
     })
