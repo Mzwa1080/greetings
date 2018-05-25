@@ -28,7 +28,17 @@ function greetingsWorking(){
 
   if(everyName !== ""){
      var languageGreeting = greetingInstance.langGreetings();
-      displayGreeting.innerHTML = languageGreeting +' ' + '!';
+      displayGreeting.innerHTML = languageGreeting +' ' + "";
+    }
+
+
+
+    if(everyName == ""){
+      displayGreeting.innerHTML = "Please Enter Your Name!"
+    }
+
+    if(!checkedRadioBtn){
+      displayGreeting.innerHTML = "Please select a language!"
     }
 
     localStorage.setItem("users", JSON.stringify(greetingInstance.forLocal()))
@@ -36,9 +46,8 @@ function greetingsWorking(){
 
 greetBtn.addEventListener('click', function(){
   greetingsWorking();
-    if(textInputElem.value != ""){
-      textInputElem.value  = "";
-  }
+
+
 
 clearBtnElem.addEventListener('click', function(){
       greetingInstance.clearing();

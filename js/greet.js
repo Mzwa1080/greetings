@@ -15,6 +15,10 @@ function MyGreetingsLogic(userStorages){
          }
         }
 
+        // if(languages != ""){
+        //   greetedNames[everyName] =0;
+        // }
+
         if(userStorages){
           greetedNames = userStorages;
         }
