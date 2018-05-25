@@ -7,14 +7,14 @@ function MyGreetingsLogic(userStorages){
 
        function counting(everyName){
         if(everyName !== ""){
-          if (greetedNames[everyName] === undefined){
+          if (greetedNames[everyName.toUpperCase()] === undefined){
           // Names = everyName;
 
-         greetedNames[everyName] = 0;
+         greetedNames[everyName.toUpperCase()] = 0;
          //counter++;
          }
+         greetedNames[everyName.toUpperCase()] += 1;
         }
-
         // if(languages != ""){
         //   greetedNames[everyName] =0;
         // }
@@ -71,7 +71,7 @@ function MyGreetingsLogic(userStorages){
         langGreetings,
         clearing,
         forLocal,
-        //userzz
+        greetedNames
 
 
         }
